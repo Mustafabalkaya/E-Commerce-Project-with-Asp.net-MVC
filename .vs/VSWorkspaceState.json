@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ticariOtomasyon",
+    "\\ticariOtomasyon\\App_Start",
+    "\\ticariOtomasyon\\Controllers",
+    "\\ticariOtomasyon\\Views",
+    "\\ticariOtomasyon\\Views\\Departman",
+    "\\ticariOtomasyon\\Web\\dist",
+    "\\ticariOtomasyon\\Web\\dist\\css"
+  ],
+  "SelectedNode": "\\ticariOtomasyon\\Views\\Departman\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

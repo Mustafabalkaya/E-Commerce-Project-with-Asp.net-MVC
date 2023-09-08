@@ -1,0 +1,46 @@
+﻿@using ticariOtomasyon.Models.Siniflar
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyat</th>
+        <th>Satış Fiyat</th>
+        <th>Kategori</th>
+        <th>Göresel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+
+            <td>
+                @k.Urunid
+            </td>
+            <td>
+                @k.UrunAd
+            </td>
+            <td>@k.Marka</td>
+            <td>@k.Stok</td>
+            <td>@k.AlisFiyat</td>
+            <td>@k.SatisFiyat</td>
+            <td>@k.Kategori.KategoriAd</td>
+            <td>@k.UrunGorsel</td>
+            <td><a href="/Urun/UrunSil/@k.Urunid" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Urun/UrunGetir/@k.Urunid" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Urun/YeniUrun" class="btn btn-info">Yeni Ürün</a>

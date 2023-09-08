@@ -1,0 +1,28 @@
+﻿@model ticariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>PersonelGetir</h2>
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(s => s.Personelid)
+        @Html.LabelFor(s => s.PersonelAd)
+        @Html.TextBoxFor(s => s.PersonelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(s => s.PersonelSoyad)
+        @Html.TextBoxFor(s => s.PersonelSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(s => s.PersonelGorsel)
+        @Html.TextBoxFor(s => s.PersonelGorsel, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(s => s.Departman)
+        @Html.DropDownListFor(s => s.departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        <br />
+    </div>
+    <button class="btn btn-info"> Güncelle</button>
+}
+

@@ -1,0 +1,38 @@
+﻿@model ticariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Ürün Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{   @Html.HiddenFor(s=>s.Urunid)
+    @Html.LabelFor(s => s.UrunAd)
+    @Html.TextBoxFor(s => s.UrunAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Marka)
+    @Html.TextBoxFor(s => s.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Stok)
+    @Html.TextBoxFor(s => s.Stok, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.AlisFiyat)
+    @Html.TextBoxFor(s => s.AlisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.SatisFiyat)
+    @Html.TextBoxFor(s => s.SatisFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Kategori)
+    @*@Html.TextBoxFor(s => s.Kategoriid, new { @class = "form-control" })*@
+    @Html.DropDownListFor(s => s.Kategoriid, (List<SelectListItem>)ViewBag.sb, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.UrunGorsel)
+    @Html.TextBoxFor(s => s.UrunGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Durum)
+    @Html.TextBoxFor(s => s.Durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+
+}

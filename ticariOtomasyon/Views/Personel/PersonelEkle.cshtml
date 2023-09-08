@@ -1,0 +1,29 @@
+﻿@model ticariOtomasyon.Models.Siniflar.Personel
+
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>PersonelEkle</h2>
+
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(s => s.PersonelAd)
+    @Html.TextBoxFor(s => s.PersonelAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.PersonelSoyad)
+    @Html.TextBoxFor(s => s.PersonelSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.PersonelGorsel)
+    @Html.TextBoxFor(s => s.PersonelGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Departman)
+    @*@Html.TextBoxFor(s => s.Kategoriid, new { @class = "form-control" })*@
+    @Html.DropDownListFor(s => s.departmanid, (List<SelectListItem>)ViewBag.x, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+

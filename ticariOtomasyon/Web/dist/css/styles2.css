@@ -1,0 +1,408 @@
+﻿* {
+    /* kodlarımızı yazmaya başlamadan önce CSS'i sıfırlıyoruz */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1c1d1c;
+}
+
+.container {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NAVIGATION */
+nav.navigation {
+    background-color: #012336;
+    width: 100%;
+    height: 80px;
+    /* navigation içerisinde bulunan logo ve menü itemlerini yatayda aralrında eşit boşluk olacak şekilde hizalıyoruz 
+  ve dikey 80px'lik yükseklikte ortalıyoruz */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a.logo-link {
+    text-decoration: none;
+}
+
+img.logo-img {
+    /* logomuzun boyutunu 150px olarak ayarladık (sadece width verdiğimiz için height değeri kendini 
+  görüntü kalitesi bozulmayacak şekilde otomatik olarak ayarladı) */
+    width: 150px;
+}
+
+ul.navigation-items {
+    list-style-type: none;
+    /* navigation içinde dikey konumda olan <li> ögelerini yatay hale getirmek için bu değeri verdik. */
+    display: flex;
+}
+
+li.navigation-item {
+    font-size: 20px;
+    /* yukardan ve aşağıdan 0px sağdan ve soldan 20px margin veriyoruz.  */
+    margin: 0 20px 0 20px;
+}
+
+a.navigation-item-link {
+    color: #fafaf9;
+    text-decoration: none;
+}
+
+    /* menü itemlere hover olunduğunda altı çizilecek */
+    a.navigation-item-link:hover {
+        text-decoration: underline;
+    }
+
+/* SECTION HEADER */
+#section-header {
+    height: 500px;
+    color: #fafaf9;
+    /* yine yukarıdaki gibi ögeleri yatayda eşit boşluk olacak şekilde hizalıyoruz, dikeyde ise 500px'lik yükseklik değerinde ortalıyoruz */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* section left */
+.section-left {
+    width: 500px;
+}
+
+.title-left {
+    font-size: 55px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.desc-left {
+    font-size: 18px;
+    padding: 20px 0px 40px 0px;
+}
+
+.learn-more {
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: #44b98b;
+    color: #fafaf9;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+    .learn-more:hover {
+        background-color: #358767;
+    }
+
+/* section right */
+.section-right {
+    width: 500px;
+    text-align: center;
+}
+
+.chart-img {
+    width: 450px;
+}
+
+/* SECTION HİZMETLER */
+#section-hizmetler {
+    margin-top: 30px;
+    text-align: center;
+    color: #fafaf9;
+    letter-spacing: 0.5px;
+    /* yazı karakterlerini tamamen küçük olarak yazdırıyoruz */
+    text-transform: lowercase;
+}
+
+.title-hizmet {
+    font-size: 20px;
+    font-weight: 700;
+    color: #44b98b;
+}
+
+.sub-title-hizmet {
+    font-size: 25px;
+    /* Eğer bu değeri vermezsek aşağıda ::before ve ::after ile oluşruduğumuz düz çizgiler (-) sayfanın en soluna ve en sağına gider! */
+    display: inline;
+    /* Aşağıda ::before ve ::after'da verdiğimiz position: absolute'dan sonra ögelerin nereyi referans alarak konumlanacağını 
+  relative değeri ile belirtiyoruz. Eğer bu değeri vermezsek oluşturduğumuz şekiller başka bir yeri referans alarak kendisini konumlandırır. */
+    position: relative;
+}
+
+    /* burada metnin hemen önüne (öncesine) bir şekil oluşturuyoruz. */
+    .sub-title-hizmet::before {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: #358767;
+        position: absolute;
+        top: 50%;
+        left: -30px;
+    }
+
+    /* burada metnin hemen sonrasına (arkasına) bir şekil oluşturuyoruz. */
+    .sub-title-hizmet::after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: #358767;
+        position: absolute;
+        top: 50%;
+        right: -30px;
+    }
+
+.items-hizmet {
+    margin-top: 30px;
+    /* Ögeleri flex ile yatayda ortalı olarak hizalıyoruz */
+    display: flex;
+    justify-content: center;
+    /* burada yine flex yapsını kullanarak ögelerin ekrana sığmadığı zaman alt satıra geçmesi gerektiğini söylüyoruz. */
+    flex-wrap: wrap;
+}
+
+.item-hizmet {
+    padding: 20px;
+    margin: 20px;
+    background-color: #358767;
+    border-radius: 10px;
+}
+
+.name-hizmet {
+    font-size: 25px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #1c1d1c;
+}
+
+p.desc-hizmet {
+    font-size: 18px;
+    padding: 15px 0px 15px 0px;
+}
+
+a.learn-more-hizmet {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1c1d1c;
+    text-decoration: none;
+}
+
+/* !!!!!!!! RESPONSIVE TASARIM !!!!!!!! */
+
+/* Ekran boyutu 1300px veya altında ise bu kodları uygulayacak */
+@media screen and (max-width: 1300px) {
+    .section-left {
+        width: 400px;
+    }
+
+    .section-right {
+        width: 600px;
+    }
+}
+
+/* Ekran boyutu 1150px veya altında ise bu kodları uygulayacak */
+@media screen and (max-width: 1150px) {
+    #section-header {
+        margin-top: 200px;
+        /* burada ögelerin satır hizalı değil sütün hizalı olmasını sağlıyoruz. yani yan yana duran ögeler alt alta sıralanacak */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-left {
+        width: 800px;
+    }
+
+    .chart-img {
+        margin-top: 80px;
+        width: 350px;
+    }
+
+    #section-hizmetler {
+        margin-top: 80px;
+    }
+}
+
+/* Ekran boyutu 940px veya altında ise bu kodları uygulayacak */
+@media screen and (max-width: 940px) {
+    nav.navigation {
+        height: 100px;
+        /* burada da navigation ögelerinin (loga ve menü itemleri) yan yana değil alt alta durmasını sağlıyoruz */
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img.logo-img {
+        padding: 10px 0 0 0;
+        width: 100px;
+    }
+
+    li.navigation-item {
+        font-size: 18px;
+        margin: 0 20px 0 20px;
+        padding: 10px 0 10px 0;
+    }
+}
+
+/* Ekran boyutu 890px veya altında ise bu kodları uygulayacak */
+@media screen and (max-width: 890px) {
+    .section-left,
+    .section-right {
+        width: 100%;
+    }
+
+    .title-left {
+        font-size: 40px;
+    }
+
+    .desc-left {
+        font-size: 14px;
+    }
+
+    .learn-more {
+        font-size: 14px;
+    }
+
+    .chart-img {
+        width: 350px;
+    }
+
+    .title-hizmet {
+        font-size: 18px;
+    }
+
+    .sub-title-hizmet {
+        font-size: 23px;
+    }
+
+    .name-hizmet {
+        font-size: 23px;
+    }
+
+    p.desc-hizmet {
+        font-size: 16px;
+    }
+
+    a.learn-more-hizmet {
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+/* Ekran boyutu 720px veya altında ise bu kodları uygulayacak */
+@media screen and (max-width: 720px) {
+    nav.navigation {
+        height: 100px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img.logo-img {
+        padding: 10px 0 0 0;
+        width: 90px;
+    }
+
+    li.navigation-item {
+        font-size: 14px;
+    }
+
+    #section-header {
+        height: 300px;
+    }
+
+    .title-left {
+        font-size: 30px;
+    }
+
+    .desc-left {
+        font-size: 12px;
+    }
+
+    .learn-more {
+        font-size: 12px;
+    }
+
+    .chart-img {
+        width: 250px;
+    }
+
+    #section-hizmetler {
+        margin-top: 120px;
+    }
+
+    .title-hizmet {
+        font-size: 15px;
+    }
+
+    .sub-title-hizmet {
+        font-size: 20px;
+    }
+
+    .name-hizmet {
+        font-size: 20px;
+    }
+
+    p.desc-hizmet {
+        font-size: 13px;
+    }
+
+    a.learn-more-hizmet {
+        font-size: 15px;
+        font-weight: 800;
+    }
+}
+
+/* Ekran boyutu 560px veya altında ise bu kodları uygulayacak */
+@media screen and (max-width: 560px) {
+    img.logo-img {
+        width: 80px;
+    }
+
+    li.navigation-item {
+        font-size: 12px;
+    }
+
+    .title-left {
+        font-size: 28px;
+    }
+
+    .desc-left {
+        font-size: 10px;
+    }
+
+    .learn-more {
+        font-size: 10px;
+    }
+
+    .chart-img {
+        width: 230px;
+    }
+
+    #section-hizmetler {
+        margin-top: 100px;
+    }
+
+    .title-hizmet {
+        font-size: 12px;
+    }
+
+    .sub-title-hizmet {
+        font-size: 18px;
+    }
+
+    .name-hizmet {
+        font-size: 18px;
+    }
+
+    p.desc-hizmet {
+        font-size: 12px;
+    }
+
+    a.learn-more-hizmet {
+        font-size: 13px;
+    }
+}

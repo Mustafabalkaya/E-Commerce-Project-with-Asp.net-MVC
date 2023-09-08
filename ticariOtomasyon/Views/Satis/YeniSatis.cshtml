@@ -1,0 +1,32 @@
+﻿@model ticariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Satış Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(s => s.Urun)
+    @Html.DropDownListFor(s => s.Urunid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cari")
+    @Html.DropDownListFor(s => s.Cariid, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Personel)
+    @Html.DropDownListFor(s => s.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Adet)
+    @Html.TextBoxFor(s => s.Adet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.Fiyat)
+    @Html.TextBoxFor(s => s.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.ToplamTutar)
+    @Html.TextBoxFor(s => s.ToplamTutar, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Satış Yap</button>
+
+</form>
+

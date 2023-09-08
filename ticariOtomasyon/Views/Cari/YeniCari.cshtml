@@ -1,0 +1,28 @@
+﻿@model ticariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Cari Sayfası</h2>
+
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(s => s.CariAd)
+    @Html.TextBoxFor(s => s.CariAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.CariSoyad)
+    @Html.TextBoxFor(s => s.CariSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.CariSehir)
+    @Html.TextBoxFor(s => s.CariSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(s => s.CariMail)
+    @Html.TextBoxFor(s => s.CariMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+
+

@@ -1,0 +1,32 @@
+﻿@model ticariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "CariGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("CariGuncelle", "Cari", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(s => s.CariAd)
+        @Html.TextBoxFor(s => s.CariAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.CariAd, "", new { @style = "color:red" })
+        <br />
+        @Html.LabelFor(s =>s.CariSoyad)
+        @Html.TextBoxFor(s => s.CariSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.CariSoyad, "", new { @style = "color:red" })
+        <br />
+        @Html.LabelFor(s => s.CariSehir)
+        @Html.TextBoxFor(s => s.CariSehir, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(s => s.CariMail)
+        @Html.TextBoxFor(s => s.CariMail, new { @class = "form-control" })
+        <br />
+        @Html.HiddenFor(s => s.Cariid)
+    </div>
+    <button class="btn btn-info"> Güncelle</button>
+}
+
